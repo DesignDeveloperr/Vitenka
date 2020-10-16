@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static  'css/tailwind.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body class="bg-blue-100">
+    <header class="bg-blue-600">
+        <div class="container mx-auto p-8 flex">
+            <div class="font-bold text-white text-4xl">Купить кота Виктора</div>
+            <ul class="flex text-white my-auto text-2xl mx-auto">
+                <li class="mr-8 hover:text-pink-400 transition duration-200"><a href="">Главная</a></li>
+                <li class="mr-8 hover:text-pink-400 transition duration-200"><a href="">Каталог</a></li>
+                <li class="mr-8 hover:text-pink-400 transition duration-200"><a href="">Отзывы</a></li>
+                <li class="hover:text-pink-400 transition duration-200"><a href="">Контакты</a></li>
+            </ul>
+            <button class="bg-pink-600 rounded text-white text-2xl px-4 mr-4 hover:bg-pink-800 transition duration-200">Войти</button>
+            <button class="bg-pink-600 rounded text-white text-2xl px-4 hover:bg-pink-800 transition duration-200">Регистрация</button>
+        </div>
+    </header>
+    <div class="h-2 w-full bg-pink-600"></div>
+
+    <main>
+        <section>
+            <div class="container mx-auto">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-6">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
