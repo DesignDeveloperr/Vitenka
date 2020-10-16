@@ -1,2 +1,25 @@
 {% extends 'layout/basic.html' %}
+{% load static %}
 {% block title %}Главная{% endblock %}
+{% block content %}
+<main class="my-40">
+    <section>
+        <div class="container mx-auto">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 xl:col-span-6 lg:col-span-6">
+                    <img src="{% static 'img/index.jpg' %}" style="height: 700px" class="rounded-2xl mx-auto animate__animated animate__fadeInLeft" alt="">
+                </div>
+
+                <div class="col-span-12 xl:col-span-6 lg:col-span-6">
+                    <div class="mt-20 animate__animated animate__fadeIn animate__slower">
+                        <div class=" font-bold text-4xl text-center">Виктар 12</div>
+                        <div class="font-bold text-6xl text-center">Во первых,<br> это кот.</div>
+                        <div class="text-2xl mx-8 text-center my-8">Витя, самый быстрый кот. Полосатый от края до края. Четыре лапы, которые в четыре раза снижает риск повреждений котика при падении. И в глазах есть ночной режим. Всё это есть в Викторе. В двух размерах.</div>
+                        <div class="text-center text-green-800 text-lg">Предзаказ Витя 12 с 21 октября | Предзаказ Витя 12 mini с 6 ноября</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
