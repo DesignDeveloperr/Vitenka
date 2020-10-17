@@ -1,5 +1,6 @@
 from django.core.serializers import serialize
 from django.http import JsonResponse
+from django.utils import formats
 
 from reviews.models import Reviews
 
@@ -22,4 +23,7 @@ def add_review(request: object) -> object:
 
 
 def get_json_reviews() -> object:
-    return JsonResponse(serialize('json', Reviews.objects.all()), safe=False)
+    data = []
+    for i in Reviews.objects.all().order_by('-pk'):
+        data += [{'name': i.name, 'text': i.text, 'date': formats.date_format(i.datetime, "SHORT_DATETIME_FORMAT")}]
+    return JsonResponse(data, safe=False)
