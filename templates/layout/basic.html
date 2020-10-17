@@ -18,12 +18,12 @@
                 <li class="xl:mr-8 lg:mr-8"><a class="hover:text-pink-400 transition duration-200" href="{% url 'index' %}">Главная</a></li>
                 <li class="xl:mr-8 lg:mr-8"><a class="hover:text-pink-400 transition duration-200" href="">Каталог</a></li>
                 <li class="xl:mr-8 lg:mr-8"><a class="hover:text-pink-400 transition duration-200" href="{% url 'reviews' %}">Отзывы</a></li>
-                <li><a class="hover:text-pink-400 transition duration-200" href="">Контакты</a></li>
+                <li><a class="hover:text-pink-400 transition duration-200" href="{% url 'contacts' %}">Контакты</a></li>
             </ul>
         </div>
     </header>
 
-    <main class="my-40">
+    <main class="my-32 p-4">
         {% block content %}
         {% endblock %}
     </main>
