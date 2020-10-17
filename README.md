@@ -5,7 +5,7 @@
 * Pillow 8.0.0
 * pytz 2020.1
 * sqlparse 0.4.1
-###Запуск:
+### Запуск:
 1. `source venv/Scripts/activate`
 2. `./manage.py runserver`
 3. Открыть http://localhost:8000
