@@ -15,7 +15,7 @@ def get_json_catalog(page: int, search_query: str, order_by: str) -> object:
     for i in products[(page * 6) - 6:page * 6 + 6]:
         data += [{
             'name': i.name,
-            'price': str(i.price) + 'руб.',
+            'price': str(i.price) + ' руб.',
             'date': formats.date_format(i.datetime, "SHORT_DATETIME_FORMAT"),
             'image': i.image.url
         }]

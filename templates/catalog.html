@@ -10,27 +10,24 @@
                     <input type="text" name="search" class="p-2 bg-gray-200 outline-none rounded w-full" placeholder="Название">
                     <div class="my-2 font-medium">Сортировать</div>
 
-                    <input type="radio" id="filter_name" name="filter">
+                    <input type="radio" id="filter_name" name="filter" value="name">
                     <label for="filter_name">По имени</label><br>
 
-                    <input type="radio" id="filter_price" name="filter">
+                    <input type="radio" id="filter_price" name="filter" value="price">
                     <label for="filter_price">По цене</label><br>
 
-                    <input type="radio" id="filter_date" name="filter">
+                    <input type="radio" id="filter_date" name="filter" value="datetime">
                     <label for="filter_date">По дате</label><br>
                 </div>
 
                 <div class="xl:col-span-9 lg:col-span-8 col-span-12">
-                    <div class="grid grid-cols-12 gap-4">
-                        <div class="xl:col-span-4 lg:col-span-6 col-span-12 rounded bg-white p-4">
-                            <img src="{% static 'img/catalog.jpg' %}" class="object-cover h-64 w-full rounded" alt="">
-                            <div class="font-medium my-2 text-2xl">Название</div>
-                            <div class="mb-2">Цена</div>
-                            <div>Дата</div>
-                        </div>
+                    <div class="grid grid-cols-12 gap-4" id="products">
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script src="{% static 'js/catalog.js' %}"></script>
 {% endblock %}
