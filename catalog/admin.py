@@ -2,4 +2,9 @@ from django.contrib import admin
 
 from catalog.models import Products
 
-admin.site.register(Products)
+
+class ProductsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price', 'datetime', 'image')
+
+
+admin.site.register(Products, ProductsAdmin)
