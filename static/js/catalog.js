@@ -1,4 +1,4 @@
-
+//Тут нет ничего такого, что отличаается от reviews.js
 let get_json_catalog = (page) => {
     $('.product_item').remove()
 

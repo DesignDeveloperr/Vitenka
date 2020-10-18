@@ -5,10 +5,12 @@ from django.utils import formats
 from reviews.models import Reviews
 
 
+# Валидируем данные с формы отзывов и выводим сообщения об ошибке или об успехе
 def add_review(request: object) -> object:
     if not request.POST['name'] == '':
         if not request.POST['text'] == '':
             if len(request.POST['name']) <= 30:
+                # Создаем запись с отзывом в базе
                 Reviews.objects.create(
                     name=request.POST['name'],
                     text=request.POST['text']
@@ -22,6 +24,7 @@ def add_review(request: object) -> object:
         return JsonResponse({'type': 'error', 'message': 'Заполните поле с именем'})
 
 
+# Вывыдим JSON массив с отзывами для JavaScript
 def get_json_reviews() -> object:
     data = []
     for i in Reviews.objects.all().order_by('-pk'):
