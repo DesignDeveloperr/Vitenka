@@ -27,5 +27,5 @@ def get_json_catalog(page: int, search_query: str, order_by: str) -> object:
             'image': i.image.url
         }]
 
-    # Отдаем на страницу котовый JSON масссив для JavaScript
+    # Отдаем на страницу готовый JSON масссив для JavaScript
     return JsonResponse(data, safe=False)
