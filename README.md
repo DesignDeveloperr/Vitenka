@@ -9,3 +9,8 @@
 1. `source venv/Scripts/activate`
 2. `./manage.py runserver`
 3. Открыть http://localhost:8000
+### Админка:
+* http://localhost:8000/admin
+* Логин/пароль - admin
+### P.S.
+Юнит тесты, может быть, когда-нибудь, когда венера будет в меркурии - напишу
