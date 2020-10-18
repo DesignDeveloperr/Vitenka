@@ -31,9 +31,19 @@
 
                     </div>
                 </div>
+
+                <div class="col-span-12">
+                    <ul class="flex" id="catalog_pages">
+
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        const json_catalog_pages_url = '{% url 'json_catalog_pages' %}'
+    </script>
 
     <script src="{% static 'js/catalog.js' %}"></script>
 {% endblock %}

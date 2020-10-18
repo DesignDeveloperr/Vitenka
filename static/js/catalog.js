@@ -20,9 +20,21 @@ let get_json_catalog = (page) => {
             }, 200 * i)
         }
     })
+
+    get_catalog_pages(page)
 }
 
 get_json_catalog(1)
 
 $('input[name="search"]').change(() => get_json_catalog(1))
 $('input[name="filter"]').click(() => get_json_catalog(1))
+
+function get_catalog_pages(page) {
+    $('.catalog_pages_item').remove()
+
+    $.get(json_catalog_pages_url, data => {
+        for (let pages in data) {
+            data[pages] === page ? $('#catalog_pages').append('<li class="p-2 bg-pink-600 m-1 text-white cursor-pointer catalog_pages_item">' + data[pages] + '</li>') : $('#catalog_pages').append('<li class="p-2 m-1 bg-pink-400 text-white cursor-pointer catalog_pages_item" onclick="get_json_catalog(' + data[pages] + ')">' + data[pages] + '</li>')
+        }
+    })
+}

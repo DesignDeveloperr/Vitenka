@@ -6,5 +6,6 @@ from catalog import views
 # какая функция будет выполяеться при обращении на определенный url
 urlpatterns = [
     path('', views.catalog, name='catalog'),
-    path('json/<int:page>/<str:search_query>/<str:order_by>/', views.api_catalog, name='json_catalog')
+    path('json/<int:page>/<str:search_query>/<str:order_by>/', views.api_catalog, name='json_catalog'),
+    path('json/pages/', views.api_catalog_pages, name='json_catalog_pages')
 ]
