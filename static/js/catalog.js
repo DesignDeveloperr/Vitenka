@@ -8,7 +8,7 @@ const get_catalog_pages = page => {
     $.get(json_catalog_pages_url, data => data.map(item => page === item ? $('#catalog_pages').append(active_nav_template(item)) : $('#catalog_pages').append(nav_template(item))))
 }
 
-const get_json_catalog = (page) => {
+const get_json_catalog = page => {
     $('.product_item').remove()
 
     let search_query = $('input[name="search"]').val() === '' ? 'all' : $('input[name="search"]').val()
