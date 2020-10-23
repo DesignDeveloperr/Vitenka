@@ -26,7 +26,7 @@ const show_review_from_json = () => {
     $('.review_item').remove()
 
     //Получаем JSON массив с отзывавми и показываем их
-    $.get(json_reviews_url, data => data.length > 0 ? data.map(item => setTimeout(() => $('#reviews').append(review_template(item)), 100 * data.indexOf(item))) : $('#reviews').append(no_reviews_template()))
+    $.get(json_reviews_url, data => data.length > 0 ? data.map((item, i) => setTimeout(() => $('#reviews').append(review_template(item)), 100 * i)) : $('#reviews').append(no_reviews_template()))
 }
 
 show_review_from_json()

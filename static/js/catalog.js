@@ -15,7 +15,7 @@ const get_json_catalog = page => {
     let order_by = $('input[name="filter"]:checked').val() === undefined ? 'none' : $('input[name="filter"]:checked').val()
     let product_template = item => `<div class="xl:col-span-4 lg:col-span-6 col-span-12 rounded bg-white p-4 product_item animate__animated animate__fadeIn"><img src="${ item.image }" class="object-cover h-64 w-full rounded" alt=""><div class="font-medium my-2 text-2xl">${ item.name }</div><div class="mb-2">${ item.price }</div><div>${ item.date }</div></div>`
 
-    $.get('/catalog/json/' + page + '/' + search_query + '/' + order_by + '/', data => data.map(item => setTimeout(() => $('#products').append(product_template(item)), 100 * data.indexOf(item))))
+    $.get('/catalog/json/' + page + '/' + search_query + '/' + order_by + '/', data => data.map((item, i) => setTimeout(() => $('#products').append(product_template(item)), 100 * i)))
 
     get_catalog_pages(page)
 }
