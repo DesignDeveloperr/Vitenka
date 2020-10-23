@@ -16,36 +16,17 @@ $('#send_review').click(() => {
     .fail(() => $('#review_error').html('Возникла ошибка при отправке данных'))
 })
 
-
 //Показываем отзывы на странице
-let show_review_from_json = () => {
+const show_review_from_json = () => {
+
+    let review_template = item => `<div class="container mx-auto bg-white p-8 rounded mb-4 review_item animate__animated animate__fadeIn">${ item.name }<div class="text-2xl">${ item.text }</div><div class="text-gray-700 my-2">${ item.date }</div><div class="text-gray-500"></div></div>`
+    let no_reviews_template = () => `<div class="container mx-auto bg-white p-8 rounded mb-4 review_item animate__animated animate__fadeIn"><div class="text-2xl text-center">Отзывов пока нет</div></div>`
 
     //Удаляем отзывы со страницы
     $('.review_item').remove()
 
     //Получаем JSON массив с отзывавми и показываем их
-    $.get(json_reviews_url, (data) => {
-        if (data.length > 0) {
-            for (let i in data) {
-                setTimeout(function () {
-                    let item = data[i]
-                    $('#reviews').append(
-                        '<div class="container mx-auto bg-white p-8 rounded mb-4 review_item animate__animated animate__fadeIn">\n' +
-                        '    <div class="text-2xl">' + item.name + '</div>\n' +
-                        '    <div class="text-gray-700 my-2">' + item.text + '</div>\n' +
-                        '    <div class="text-gray-500">' + item.date + '</div>\n' +
-                        '</div>'
-                    )
-                }, 200 * i)
-            }
-        } else {
-            $('#reviews').append(
-                '<div class="container mx-auto bg-white p-8 rounded mb-4 review_item animate__animated animate__fadeIn">\n' +
-                '    <div class="text-2xl text-center">Отзывов пока нет</div>\n' +
-                '</div>'
-            )
-        }
-    })
+    $.get(json_reviews_url, data => data.length > 0 ? data.map(item => setTimeout(() => $('#reviews').append(review_template(item)))) : $('#reviews').append(no_reviews_template()))
 }
 
 show_review_from_json()
