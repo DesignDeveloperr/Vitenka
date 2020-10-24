@@ -2,7 +2,7 @@
 $('#send_review').click(() => {
 
     //Выполняется при успешном ответе от сервера
-    let review_success = (data) => { $('#review_form').hide(); $('#review_success').html(data.message); show_review_from_json() }
+    let review_success = data => { $('#review_form').hide(); $('#review_success').html(data.message); show_review_from_json() }
 
     //Посылаем AJAX (AJAJ - Asynchronous Javascript And JSON) запрос на сервер
     $.ajax({
@@ -12,7 +12,7 @@ $('#send_review').click(() => {
         type: 'POST'
     })
     //Получаем ответ от сервера
-    .done((data) => data.type === 'error' ? $('#review_error').html(data.message) : review_success(data))
+    .done(data => data.type === 'error' ? $('#review_error').html(data.message) : review_success(data))
     .fail(() => $('#review_error').html('Возникла ошибка при отправке данных'))
 })
 

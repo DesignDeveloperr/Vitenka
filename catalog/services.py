@@ -8,7 +8,7 @@ from catalog.models import Products
 
 # Структура приложений джанги говорит, что бизнес-логику надо писать во views,
 # но как показывает практика - лучше разделять отображение шаблонов и логику
-def get_json_catalog(page: int, search_query: str, order_by: str) -> object:
+def get_json_catalog(page: int, search_query: str, order_by: str) -> JsonResponse:
     # Получаем все продукты из базы
     products = Products.objects.all()
 
@@ -35,7 +35,7 @@ def get_json_catalog(page: int, search_query: str, order_by: str) -> object:
 
 
 # Получаем кол-во старниц для каталога
-def get_catalog_pages() -> object:
+def get_catalog_pages() -> JsonResponse:
     data = []
     for i in range(math.ceil(Products.objects.count() / 6)):
         data.append(i + 1)

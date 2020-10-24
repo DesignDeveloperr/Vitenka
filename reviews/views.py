@@ -16,5 +16,4 @@ def reviews(request):
 
 
 def api_reviews(request):
-    if request.method == 'GET':
-        return get_json_reviews()
+    return get_json_reviews()

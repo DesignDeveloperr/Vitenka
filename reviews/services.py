@@ -6,7 +6,7 @@ from reviews.models import Reviews
 
 
 # Валидируем данные с формы отзывов и выводим сообщения об ошибке или об успехе
-def add_review(request: object) -> object:
+def add_review(request: object) -> JsonResponse:
     if not request.POST['name'] == '':
         if not request.POST['text'] == '':
             if len(request.POST['name']) <= 30:
@@ -25,7 +25,7 @@ def add_review(request: object) -> object:
 
 
 # Вывыдим JSON массив с отзывами для JavaScript
-def get_json_reviews() -> object:
+def get_json_reviews() -> JsonResponse:
     data = []
     for i in Reviews.objects.all().order_by('-pk'):
         data += [{'name': i.name, 'text': i.text, 'date': formats.date_format(i.datetime, "SHORT_DATETIME_FORMAT")}]
