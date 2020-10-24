@@ -1,10 +1,15 @@
 # **Интернет магазин по продаже котов Викторов**
 ### Список библиотек:
-* asgiref 3.2.10
-* Django 3.1.2
-* Pillow 8.0.0
-* pytz 2020.1
-* sqlparse 0.4.1
+* Python
+  1. asgiref 3.2.10
+  2. Django 3.1.2
+  3. Pillow 8.0.0
+  4. pytz 2020.1
+  5. sqlparse 0.4.1
+* JavaScript
+  1. jQuery
+* CSS
+  1. TailWind
 ### Запуск:
 1. `source venv/Scripts/activate`
 2. `./manage.py runserver`
